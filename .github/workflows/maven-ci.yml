@@ -85,13 +85,13 @@ jobs:
     steps:
 
     - name: Restore cached build
-        uses: actions/cache@v3
-        with:
-            key: cached-build-${{github.sha}}
-            path: .
+      uses: actions/cache@v3
+      with:
+        key: cached-build-${{github.sha}}
+        path: .
 
     - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@master
-        env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-            SONAR_HOST_URL: https://sonarcloud.io
+      uses: sonarsource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: https://sonarcloud.io
